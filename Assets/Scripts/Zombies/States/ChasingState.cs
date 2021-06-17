@@ -14,8 +14,8 @@ namespace ULTanksZombies.Zombies
         public ChasingState(ZombieController controller, ZombieStateMachine fsm) : base(controller, fsm)
         {
             tank = controller.tank;
-            speed = controller.speed;
-            rotationSpeed = controller.rotationSpeed;
+            speed = controller.settings.speed;
+            rotationSpeed = controller.settings.rotationSpeed;
             rb = controller.GetComponent<Rigidbody>();
         }
 

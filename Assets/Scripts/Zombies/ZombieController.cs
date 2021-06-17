@@ -7,8 +7,7 @@ namespace ULTanksZombies.Zombies
     public class ZombieController : MonoBehaviour
     {
         public Transform tank;
-        public float speed;
-        public float rotationSpeed;
+        public SettingsComponent settings;
 
         private ZombieStateMachine fsm;
         private ChasingState chasingState;
