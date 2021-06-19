@@ -15,6 +15,12 @@ namespace ULTanksZombies.Zombies
 
         private void Start()
         {
+            if (tank == null)
+            {
+                //tank = GameObject.Find("Tank").transform; // busqueda
+                tank = GameManager.Instance.tank;
+            }
+
             fsm = new ZombieStateMachine();
             chasingState = new ChasingState(this, fsm);
 

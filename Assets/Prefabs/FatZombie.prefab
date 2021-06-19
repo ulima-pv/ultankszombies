@@ -126,5 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 0}
-  speed: 2
-  rotationSpeed: 4
+  settings: {fileID: 11400000, guid: f194fbc7a03114f1b97a3e0428e51bf0, type: 2}

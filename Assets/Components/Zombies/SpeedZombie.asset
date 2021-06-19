@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c355fa20cdc3241c8a2b84b43767ab82, type: 3}
   m_Name: SpeedZombie
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 3
   rotationSpeed: 3
