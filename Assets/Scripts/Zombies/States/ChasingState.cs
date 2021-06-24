@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace ULTanksZombies.Zombies
 {
@@ -10,6 +11,7 @@ namespace ULTanksZombies.Zombies
         private float speed;
         private float rotationSpeed;
         private Rigidbody rb;
+        private NavMeshAgent navMeshAgent;
 
         public ChasingState(ZombieController controller, ZombieStateMachine fsm) : base(controller, fsm)
         {
@@ -17,13 +19,16 @@ namespace ULTanksZombies.Zombies
             speed = controller.settings.speed;
             rotationSpeed = controller.settings.rotationSpeed;
             rb = controller.GetComponent<Rigidbody>();
+            navMeshAgent = controller.GetComponent<NavMeshAgent>();
         }
 
         public override void OnPhysicsUpdate()
         {
             base.OnPhysicsUpdate();
 
-            Vector3 newDirection = 
+            navMeshAgent.SetDestination(tank.position);
+
+            /*Vector3 newDirection = 
                 (controller.tank.position - controller.transform.position).normalized;
 
             Quaternion rotation = Quaternion.LookRotation(newDirection);
@@ -38,7 +43,7 @@ namespace ULTanksZombies.Zombies
                 controller.transform.position,
                 tank.position,
                 speed * Time.fixedDeltaTime
-            ) ;
+            ) ;*/
 
         }
     }

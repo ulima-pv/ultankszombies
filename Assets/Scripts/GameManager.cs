@@ -44,7 +44,18 @@ namespace ULTanksZombies
                 0.5f,
                 Random.Range(tank.position.z - 50f, tank.position.z + 50)
             );
-            Instantiate(zombies[posZombies], spawnPosition, Quaternion.identity);
+            if (IsValidPosition(spawnPosition))
+            {
+                Instantiate(zombies[posZombies], spawnPosition, Quaternion.identity);
+            }else
+            {
+                Debug.Log("No se instancio por la posicion");
+            }
+        }
+
+        private bool IsValidPosition(Vector3 spawnPosition)
+        {
+            return !Physics.CheckSphere(spawnPosition, 1f,LayerMask.GetMask("Walls"));
         }
     }
 }
